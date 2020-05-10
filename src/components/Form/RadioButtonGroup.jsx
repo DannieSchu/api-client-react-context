@@ -1,12 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-export const RadioButtonGroup = ({ name, onChange, children }) => {
+export const RadioButtonGroup = ({ children }) => {
   const radioButtonsWithNameAndOnChange = React.Children.map(children, child => {
-    return React.cloneElement(child, {
-      name,
-      onChange
-    });
+    return React.cloneElement(child);
   });
   
   return (
@@ -17,7 +14,6 @@ export const RadioButtonGroup = ({ name, onChange, children }) => {
 };
 
 RadioButtonGroup.propTypes = {
-  onChange: PropTypes.func.isRequired,
-  name: PropTypes.string.isRequired,
   children: PropTypes.array.isRequired
 };
+
