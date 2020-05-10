@@ -1,18 +1,18 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import styles from './RequestItem.css';
+import { useUrl, useMethod, useHandleClick } from '../../hooks/APIClientProvider';
 
-const RequestItem = ({ method, url, onClick }) => (
-  <section className={styles.RequestItem} onClick={onClick}>
-    <h3>{method}</h3>
-    <p>{url}</p>
-  </section>
-);
+const RequestItem = () => {
+  const { handleClick } = useHandleClick();
+  const { url } = useUrl();
+  const { method } = useMethod();
 
-RequestItem.propTypes = {
-  method: PropTypes.string.isRequired,
-  url: PropTypes.string.isRequired,
-  onClick: PropTypes.func.isRequired
+  return (
+    <section className={styles.RequestItem} onClick={handleClick}>
+      <h3>{method}</h3>
+      <p>{url}</p>
+    </section>
+  );
 };
 
 export default RequestItem;

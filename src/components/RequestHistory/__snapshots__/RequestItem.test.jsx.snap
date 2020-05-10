@@ -1,15 +1,22 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`RequestItem matches a snapshot 1`] = `
-<section
-  className="RequestItem"
-  onClick={[Function]}
+<ContextProvider
+  value={
+    Object {
+      "body": "",
+      "handleChange": [Function],
+      "handleClick": [Function],
+      "handleDelete": [Function],
+      "handleSubmit": [Function],
+      "loading": false,
+      "method": "get",
+      "requests": Array [],
+      "results": null,
+      "url": "",
+    }
+  }
 >
-  <h3>
-    post
-  </h3>
-  <p>
-    https://jsonplaceholder.typicode.com/posts
-  </p>
-</section>
+  <RequestItem />
+</ContextProvider>
 `;
