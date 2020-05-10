@@ -1,56 +1,22 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Form matches a snapshot 1`] = `
-<form
-  className="Form"
-  onSubmit={[Function]}
+<ContextProvider
+  value={
+    Object {
+      "body": "",
+      "handleChange": [Function],
+      "handleClick": [Function],
+      "handleDelete": [Function],
+      "handleSubmit": [Function],
+      "loading": false,
+      "method": "get",
+      "requests": Array [],
+      "results": null,
+      "url": "",
+    }
+  }
 >
-  <div>
-    <h2>
-      Request
-    </h2>
-  </div>
-  <div>
-    <input
-      name="url"
-      onChange={[Function]}
-      placeholder="URL"
-      type="text"
-      value="https://history.muffinlabs.com/date"
-    />
-    <button
-      className="tealButton"
-    >
-      Send
-    </button>
-  </div>
-  <section>
-    <RadioButtonGroup
-      name="method"
-      onChange={[Function]}
-    >
-      <RadioButton
-        value="get"
-      />
-      <RadioButton
-        value="post"
-      />
-      <RadioButton
-        value="put"
-      />
-      <RadioButton
-        value="patch"
-      />
-      <RadioButton
-        value="delete"
-      />
-    </RadioButtonGroup>
-  </section>
-  <textarea
-    name="body"
-    onChange={[Function]}
-    placeholder="Raw JSON Body"
-    type="text"
-  />
-</form>
+  <Form />
+</ContextProvider>
 `;

@@ -1,19 +1,18 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { RadioButton } from './RadioButton.jsx';
 import { RadioButtonGroup } from './RadioButtonGroup.jsx';
+import { useUrl, useBody, useHandleSubmit, useHandleChange } from '../../hooks/APIClientProvider';
 import styles from './Form.css';
 import buttonStyle from '../../css/button.css';
 
-const Form = ({
-  onSubmit,
-  onChange,
-  url,
-  body,
-  buttonText = 'Submit'
-}) => {
+const Form = () => {
+  const { url } = useUrl();
+  const { body } = useBody();
+  const { handleSubmit } = useHandleSubmit();
+  const { handleChange } = useHandleChange();
+
   return (
-    <form className={styles.Form} onSubmit={onSubmit}>
+    <form className={styles.Form} onSubmit={handleSubmit}>
       <div>
         <h2>Request</h2>
       </div>
@@ -22,13 +21,13 @@ const Form = ({
           type="text"
           name="url"
           value={url}
-          onChange={onChange}
+          onChange={handleChange}
           placeholder="URL" 
         />
-        <button className={buttonStyle.tealButton}>{buttonText}</button>
+        <button className={buttonStyle.tealButton}>Send!</button>
       </div>
       <section>
-        <RadioButtonGroup name="method" onChange={onChange}>
+        <RadioButtonGroup name="method" >
           <RadioButton value="get" />
           <RadioButton value="post" />
           <RadioButton value="put" />
@@ -40,18 +39,11 @@ const Form = ({
         type="text"
         name="body"
         value={body}
-        onChange={onChange}
-        placeholder="Raw JSON Body" />
+        onChange={handleChange}
+        placeholder="Raw JSON Body" 
+      />
     </form>
   );
-};
-
-Form.propTypes = {
-  onSubmit: PropTypes.func.isRequired,
-  onChange: PropTypes.func.isRequired,
-  body: PropTypes.string,
-  url: PropTypes.string.isRequired,
-  buttonText: PropTypes.string,
 };
 
 export default Form;
