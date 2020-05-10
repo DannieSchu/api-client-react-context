@@ -5,8 +5,8 @@ import { themeColors } from './themeColors.jsx';
 import styles from './JsonDisplay.css';
 
 const JsonDisplay = () => {
-  const { results } = useResults();
-  const { loading } = useLoading();
+  const results = useResults();
+  const loading = useLoading();
 
   return (
     <section className={styles.JsonDisplay}>

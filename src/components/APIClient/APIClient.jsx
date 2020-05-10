@@ -6,7 +6,7 @@ import { useRequests } from '../../hooks/APIClientProvider.jsx';
 import styles from './APIClient.css';
 
 const APIClient = () => {
-  const { requests } = useRequests();
+  const requests = useRequests();
 
   return (
     <section className={styles.APIClient}>

@@ -18,8 +18,8 @@ export const APIClientProvider = ({ children }) => {
   }, []);
 
   const stateFactory = {
-    method: setMethod,
     url: setUrl,
+    method: setMethod,
     body: setBody
   };
 
@@ -62,13 +62,13 @@ export const APIClientProvider = ({ children }) => {
   return (
     <APIClientContext.Provider value={{
       url,
-      body,
       method,
+      body,
       results,
       requests,
       loading,
-      handleSubmit,
       handleChange,
+      handleSubmit,
       handleClick,
       handleDelete
     }}>
@@ -86,29 +86,19 @@ export const useRequestContext = () => {
   return context;
 };
 
-export const useBody = () => {
-  const { body } = useRequestContext();
-  return body;
-};
-
-export const useMethod = () => {
-  const { method } = useMethod();
-  return method;
-};
-
 export const useUrl = () => {
   const { url } = useRequestContext();
   return url;
 };
 
-export const useHandleSubmit = () => {
-  const { handleSubmit } = useRequestContext();
-  return handleSubmit;
+export const useMethod = () => {
+  const { method } = useRequestContext();
+  return method;
 };
 
-export const useHandleChange = () => {
-  const { handleChange } = useRequestContext();
-  return handleChange;
+export const useBody = () => {
+  const { body } = useRequestContext();
+  return body;
 };
 
 export const useLoading = () => {
@@ -126,6 +116,16 @@ export const useRequests = () => {
   return requests;
 };
 
+export const useHandleChange = () => {
+  const { handleChange } = useRequestContext();
+  return handleChange;
+};
+
+export const useHandleSubmit = () => {
+  const { handleSubmit } = useRequestContext();
+  return handleSubmit;
+};
+
 export const useHandleClick = () => {
   const { handleClick } = useRequestContext();
   return handleClick;
@@ -135,4 +135,3 @@ export const useHandleDelete = () => {
   const { handleDelete } = useRequestContext();
   return handleDelete;
 };
-

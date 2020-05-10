@@ -6,10 +6,10 @@ import styles from './Form.css';
 import buttonStyle from '../../css/button.css';
 
 const Form = () => {
-  const { url } = useUrl();
-  const { body } = useBody();
-  const { handleSubmit } = useHandleSubmit();
-  const { handleChange } = useHandleChange();
+  const url = useUrl();
+  const body = useBody();
+  const handleSubmit = useHandleSubmit();
+  const handleChange = useHandleChange();
 
   return (
     <form className={styles.Form} onSubmit={handleSubmit}>

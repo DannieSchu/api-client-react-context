@@ -4,7 +4,7 @@ import styles from './RadioButton.css';
 import { useHandleChange } from '../../hooks/APIClientProvider';
 
 export const RadioButton = ({ value }) => {
-  const { handleChange } = useHandleChange();
+  const handleChange = useHandleChange();
 
   return (
     <div className={styles.RadioButton}>
